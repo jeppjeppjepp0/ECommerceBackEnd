@@ -25,10 +25,12 @@ router.get('/:id', async (req, res) => {
             // be sure to include its associated Category and Tag data
             include: [{ model: Category }, { model: Tag }],
         })
-        res.status(200).json(productData);
+
+    res.status(200).json(productData);
     } catch (err) {
         res.status(500).json(err);
-    }});
+    }
+});
 
 // create new product
 router.post('/', (req, res) => {
